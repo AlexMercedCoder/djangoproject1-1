@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import environ
+import django_heroku
 
 env = environ.Env(
     # set casting, default value
@@ -19,8 +20,6 @@ env = environ.Env(
 )
 # reading .env file
 environ.Env.read_env()
-
-print(env("PASSWORD"))
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -129,5 +128,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-import django_heroku
+
 django_heroku.settings(locals())
